@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Matija Čvrk</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --font-size--h1: 64px;
+            --line-height--h1: 72px;
+            --font-weight--h1: 400;
+
+            --font-size--h2: 50px;
+            --line-height--h2: 50px;
+            --font-weight--h2: 500;
+
+            --font-size--h3: 43px;
+            --line-height--h3: 45px;
+            --font-weight--h3: 400;
+
+            --font-size--h4: 28px;
+            --line-height--h4: 72px;
+            --font-weight--h4: 500;
+
+            --font-size--h5: 24px;
+            --line-height--h5: 30px;
+            --font-weight--h5: 450;
+
+            --font-weight--regular: 400;
+
+            --font-size--description: 18px;
+            --font-weight--description: 450;
+
+            --font-size--button: 16px;
+            --line-height--button: 20.24px;
+            --font-weight--button: 500;
+
+            --font-size--action: 24px;
+            --line-height--action: 25px;
+            --font-weight--action: 500;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        html,
+        body {
+            font-family: "Montserrat", sans-serif;
+            font-optical-sizing: auto;
+            font-weight: var(--font-weight--regular);
+            font-style: normal;
+        }
+
+        body,
+        article {
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+        }
+
+        h1 {
+            font-size: var(--font-size--h1);
+            line-height: var(--line-height--h1);
+            font-weight: var(--font-weight--h1);
+        }
+        h2 {
+            font-size: var(--font-size--h2);
+            line-height: var(--line-height--h2);
+            font-weight: var(--font-weight--h2);
+        }
+        h3 {
+            font-size: var(--font-size--h3);
+            line-height: var(--line-height--h3);
+            font-weight: var(--font-weight--h3);
+        }
+        h4 {
+            font-size: var(--font-size--h4);
+            line-height: var(--line-height--h4);
+            font-weight: var(--font-weight--h4);
+        }
+        h5 {
+            font-size: var(--font-size--h5);
+            line-height: var(--line-height--h5);
+            font-weight: var(--font-weight--h5);
+        }
+
+        .action-button {
+            font-family: 'Circular Std', sans-serif;
+            font-size: var(--font-size--button);
+            line-height: var(--line-height--button);
+            font-weight: var(--font-weight--button);
+            vertical-align: center;
+            height: 56px;
+            width: 208px;
+            left: 135px;
+            top: 441px;
+            background-color: whitesmoke;
+            border-radius: 28px;
+            text-transform: uppercase;
+            cursor: pointer;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+        }
+
+        .action-link {
+            font-family: 'Circular Std', sans-serif;
+            font-size: var(--font-size--action);
+            line-height: var(--line-height--action);
+            font-weight: var(--font-weight--action);
+            color: #000000;
+            cursor: pointer;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+        }
+        .action-link:hover,
+        .action-link:active,
+        .action-link:visited {
+            color: #8b8686;
+            text-decoration: none;
+        }
+
+        .gradient-text {
+            background: lavender;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero {
+            background-image: url('hero.jpg');
+            height: 800px;
+            width: 100%;
+            background-size: cover;
+            background-position: center;
+        }
+        .hero .card {
+            position: absolute;
+            left: 135px;
+            top: 111px;
+            height: 560px;
+            width: 360px;
+        }
+        .hero .card h1 {
+            font-family: 'Playfair Display',serif;
+            color: whitesmoke;
+        }
+        .hero .card h4 {
+            line-height: initial;
+            color: whitesmoke;
+        }
+        .hero .card .action-button {
+            margin-top: 83px;
+        }
+
+        .ideas {
+            padding-bottom: 5rem;
+        }
+        .ideas .heading {
+            text-align: center;
+            padding-bottom: 5rem;
+        }
+
+        .ideas .board {
+            display: flex;
+        }
+        .ideas .board .challenges {
+            width: 50%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly;
+        }
+        .ideas .board .challenges .challenge {
+            width: 40vw;
+            margin: 0 auto;
+        }
+        .ideas .board .solutions {
+            width: 50%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly;
+        }
+        .ideas .board .solutions .panel {
+            width: 90%;
+            display: flex;
+            padding: 1rem 0;
+            border-radius: 9px;
+            background-color: whitesmoke;
+            margin-bottom: .5rem;
+        }
+        .ideas .board .solutions .panel:hover {
+            cursor: default;
+            filter: drop-shadow(0 0 1em lightgray);
+        }
+        .ideas .board .solutions .panel .panel-icon {
+            height: 100%;
+            width: 4rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .ideas .board .solutions .panel .panel-content {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly;
+            width: 80%;
+        }
+        .ideas .board .solutions .panel .panel-content .panel-title {
+            font-size: var(--font-size--h4);
+            font-weight: var(--font-weight--h4);
+        }
+
+        .track-record {
+            display: flex;
+        }
+        .track-record .heading {
+            width: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding-bottom: 5rem;
+            background-color: #8b8686;
+            color: whitesmoke;
+        }
+        .track-record .heading .heading-info {
+            text-align: center;
+        }
+        .track-record .projects {
+            width: 50%;
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            padding: 4rem 4rem 0;
+        }
+        .track-record .project {
+            padding-bottom: 2rem;
+        }
+        .track-record .project {
+            display: flex;
+            flex-direction: column;
+        }
+        .track-record .project-heading {
+            padding: 0 4rem;
+        }
+        .track-record .project-heading .project-title {
+            font-size: var(--font-size--h5);
+        }
+        .track-record .project-heading .project-subtitle {
+            font-size: var(--font-size--description);
+        }
+        .track-record .project-content {
+            padding: 0 4rem;
+        }
+        .track-record .project-content .project-tags {
+        }
+        .track-record .project-content .project-actions {
+            display: flex;
+            justify-content: center;
+        }
+        .track-record .project-content .project-actions .action-link {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+        }
+        .track-record .project-content .project-actions .action-link .fa-solid {
+            font-size: var(--font-size--action);
+        }
+
+        .contact {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 4rem;
+            width: 80%;
+            margin: 4rem auto 4rem;
+            border-radius: 9px;
+            background-color: whitesmoke;
+        }
+
+        .contact .actions {
+            padding-bottom: 1rem;
+        }
+        .contact .actions .action-button {
+            color: #000000;
+            text-decoration: none;
+        }
+        .contact .actions .action-button:hover,
+        .contact .actions .action-button:active,
+        .contact .actions .action-button:visited {
+            color: #8b8686;
+            text-decoration: none;
+        }
+
+        .contact .copyright {
+            width: 100%;
+            margin-top: 1rem;
+            border-top: 2pt solid white;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <header class="hero">
+        <div class="card">
+            <h1>Looking for a <br><i>professional</i>?</h1>
+            <h4>Think beyond,<br>shape your future.</h4>
+
+            <button class="action-button" onclick="scrollPage('.hero')">Learn more</button>
+        </div>
+    </header>
+
+    <article class="ideas">
+        <div class="heading">
+            <h2 class="title">
+                Any <span class="gradient-text">Ideas</span>?
+            </h2>
+            <p>Let's work on creating impactful digital experiences</p>
+        </div>
+
+        <div class="board">
+            <div class="challenges">
+                <p class="challenge">
+                    Having difficulties bringing ideas to life through code?
+                    Need someone with a strong foundation in modern web technologies, specialized in building
+                    responsive, user-friendly applications that solve real-world problems?
+                </p>
+                <p class="challenge">
+                    Seeking a developer for an ongoing project? Be it migrating legacy solutions to modern
+                    or adapting current business processes to future needs. Consider the type of change you need
+                    and let's <span class="action-link" onclick="scrollArticles('.contact')">connect</span>.
+                </p>
+            </div>
+
+            <div class="solutions">
+                <div class="panel">
+                    <div class="panel-icon">
+                        <i class="fa-solid fa-palette"></i>
+                    </div>
+                    <div class="panel-content">
+                        <div class="panel-title">Design</div>
+                        <div class="panel-text">It's about intuitive user experience.</div>
+                    </div>
+                </div>
+                <div class="panel">
+                    <div class="panel-icon">
+                        <i class="fa-solid fa-pen-ruler"></i>
+                    </div>
+                    <div class="panel-content">
+                        <div class="panel-title">Engineering</div>
+                        <div class="panel-text">It's about breaking down barriers and fitting a practical solution.</div>
+                    </div>
+                </div>
+                <div class="panel">
+                    <div class="panel-icon">
+                        <i class="fa-solid fa-address-card"></i>
+                    </div>
+                    <div class="panel-content">
+                        <div class="panel-title">Transformation</div>
+                        <div class="panel-text">How well does it open you to new possibilities.</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </article>
+
+    <article class="track-record">
+        <div class="heading">
+            <div class="heading-info">
+                <h2 class="title">
+                    Get <span class="gradient-text">inspired</span>
+                </h2>
+                <p>See past work</p>
+            </div>
+        </div>
+        <div class="projects">
+            <section class="project">
+                <div class="project-heading">
+                    <div class="project-title">Park forest Marjan</div>
+                    <div class="project-subtitle">Interactive audio visual guide</div>
+                </div>
+                <div class="project-content">
+                    <p>Interactive audio visual guide for Park forest Marjan and map of interest points for all visitors in dual language (english & croatian).</p>
+                    <div class="project-tags"></div>
+                    <div class="project-actions">
+                        <a href="https://audio.marjan-parksuma.hr" target="_blank" class="action-link">View <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                    </div>
+                </div>
+            </section>
+            <section class="project">
+                <div class="project-heading">
+                    <div class="project-title">Končar MES product configurator</div>
+                </div>
+                <div class="project-content">
+                    <p>Product configurator for Končar end users when ordering electric motors or fans through their MES website realised as 2 projects 1 year apart, with then employer LittleCode still providing support and app maintenance</p>
+                    <div class="project-tags"></div>
+                    <div class="project-actions">
+                        <a href="https://koncar.hr/hr/koncar-motori-i-elektricni-sustavi" target="_blank" class="action-link">View <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                    </div>
+                </div>
+            </section>
+            <section class="project">
+                <div class="project-heading">
+                    <div class="project-title"></div>
+                    <div class="project-subtitle"></div>
+                </div>
+                <div class="project-content">
+                    <p></p>
+                    <div class="project-tags"></div>
+                    <div class="project-actions"></div>
+                </div>
+            </section>
+            <section class="project">
+                <div class="card">
+                    <div class="project-title"></div>
+                    <div class="project-subtitle"></div>
+                </div>
+                <div class="project-content">
+                    <p></p>
+                    <div class="project-tags"></div>
+                    <div class="project-actions"></div>
+                </div>
+            </section>
+        </div>
+    </article>
+
+    <article class="contact">
+        <div class="heading">
+            <h3>Let's connect</h3>
+        </div>
+        <div class="actions">
+            <a href="mailto:matijacvrk@gmail.com" class="action-button"><i class="fa-solid fa-envelope"></i> Email me</a>
+            <a href="https://www.linkedin.com/in/matija-cvrk-1388b3101" target="_blank" class="action-button"><i class="fa-solid fa-message"></i> LinkedIn</a>
+        </div>
+        <div class="copyright">
+            <p>© 2025 Matija Čvrk</p>
+        </div>
+    </article>
+
+    <script>
+        function scrollPage(className) {
+            const element = document.querySelector(className);
+            window.scrollTo(0, element.scrollHeight);
+        }
+        function scrollArticles(className) {
+            const element = document.querySelector(className);
+            console.log('elem ', element)
+            window.scrollTo(0, element.getBoundingClientRect().y + element.scrollHeight);
+        }
+    </script>
+</body>
+</html>
